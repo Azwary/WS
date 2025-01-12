@@ -41,7 +41,7 @@
   
     <h1>Data Mahasiswa</h1>  
   
-    <table>  
+    <table id="mahasiswaTable">  
         <thead>  
             <tr>  
                 <th>No</th>  
@@ -51,26 +51,36 @@
             </tr>  
         </thead>  
         <tbody>  
-            <tr>  
-                <td>1</td>  
-                <td>Andi Setiawan</td>  
-                <td>123456789</td>  
-                <td>Teknik Informatika</td>  
-            </tr>  
-            <tr>  
-                <td>2</td>  
-                <td>Siti Aminah</td>  
-                <td>987654321</td>  
-                <td>Manajemen</td>  
-            </tr>  
-            <tr>  
-                <td>3</td>  
-                <td>Budi Santoso</td>  
-                <td>456789123</td>  
-                <td>Ilmu Komunikasi</td>  
-            </tr>  
+            <!-- Data akan dimasukkan di sini -->  
         </tbody>  
     </table>  
+  
+    <script>  
+        // Ganti 'data_mahasiswa.json' dengan path yang sesuai jika perlu  
+        const JSON_URL = 'data/data_mahasiswa.json';  
+  
+        fetch(JSON_URL)  
+            .then(response => {  
+                if (!response.ok) {  
+                    throw new Error('Network response was not ok');  
+                }  
+                return response.json();  
+            })  
+            .then(data => {  
+                const tableBody = document.querySelector('#mahasiswaTable tbody');  
+                data.forEach((mahasiswa, index) => {  
+                    const row = document.createElement('tr');  
+                    row.innerHTML = `  
+                        <td>${index + 1}</td>  
+                        <td>${mahasiswa.nama}</td>  
+                        <td>${mahasiswa.nim}</td>  
+                        <td>${mahasiswa.program_studi}</td>  
+                    `;  
+                    tableBody.appendChild(row);  
+                });  
+            })  
+            .catch(error => console.error('Error fetching data:', error));  
+    </script>  
   
 </body>  
 </html>  
