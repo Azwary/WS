@@ -1,17 +1,17 @@
 [  
     {  
-        "nama": "Andi Setiawan",  
-        "nim": "123456789",  
+        "nama": "Azwar Yusuf",  
+        "nim": "2021610038",  
         "program_studi": "Teknik Informatika"  
     },  
     {  
-        "nama": "Siti Aminah",  
-        "nim": "987654321",  
-        "program_studi": "Manajemen"  
+        "nama": "Azwar",  
+        "nim": "2021610037",  
+        "program_studi": "Teknik Informatika"  
     },  
     {  
-        "nama": "Budi Santosso",  
-        "nim": "456789123",  
-        "program_studi": "Ilmu Komunikasi"  
+        "nama": "Yusuf",  
+        "nim": "2021610039",  
+        "program_studi": "Teknik Informatika"  
     }  
 ]  
